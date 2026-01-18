@@ -1,11 +1,10 @@
 from flask import Flask, render_template, request, redirect
-from db import get_db_connection
-from db import products_collection
+from db import get_products_collection
 
 # Server = a program that stays ON and responds when someone asks for something.
 app = Flask(__name__)
 
-from db import get_products_collection
+
 
 @app.route("/")
 def home():
