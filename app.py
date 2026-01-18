@@ -9,7 +9,8 @@ from db import get_products_collection
 
 @app.route("/")
 def home():
-    products = get_products_collection().find()
+    products_col = get_products_collection()
+    products = list(products_col.find())
     return render_template("home.html", products=products)
 
 @app.route("/add", methods=["POST"])
